@@ -13,7 +13,7 @@ class SecondPage extends StatefulWidget{
   }
 }
 
-class SecondPageState extends State<SecondPage> with AdmobUtils{
+class SecondPageState extends State<SecondPage>{
 
   @override
   Widget build(BuildContext context) {
@@ -26,18 +26,18 @@ class SecondPageState extends State<SecondPage> with AdmobUtils{
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            showBannerAd(
+            AdmobUtils.showBannerAd(
                 callback: (AdmobAdEvent event, Map<String, dynamic> args,AdTypeEnum adType) {}),
             FlatButton(
               child: Text("插页式", style: TextStyle(fontSize: 18)),
               onPressed: () {
-                showInterstitialAd();
+                AdmobUtils.showInterstitialAd();
               },
             ),
             FlatButton(
               child: Text("奖励式", style: TextStyle(fontSize: 18)),
               onPressed: () {
-                showRewardAd();
+                AdmobUtils.showRewardAd();
               },
             ),
           ],

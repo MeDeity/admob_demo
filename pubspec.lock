@@ -67,7 +67,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "9529a5fc68c79d4e1806d0f96a53ec2727674fb2"
+      resolved-ref: fd07a0ad01e9ee7af30f689b51898e2d61d6d45c
       url: "https://github.com/MeDeity/flutter_lib_admob"
     source: git
     version: "0.0.1"

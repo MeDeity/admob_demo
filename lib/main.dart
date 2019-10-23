@@ -31,12 +31,40 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+///
+///  ///android+ios app id;
+//    this.androidBannerIdList = ["ca-app-pub-3940256099942544/6300978111"];
+//
+//    ///android banner id
+//    this.iosBannerIdList = ["ca-app-pub-3940256099942544/2934735716"];
+//
+//    ///Interstitial id
+//    this.androidInterstitialIdList = ["ca-app-pub-3940256099942544/1033173712"];
+//    this.iosInterstitialIdList = ["ca-app-pub-3940256099942544/4411468910"];
+//
+//    ///Reward Video
+//    this.androidRewardBasedVideoIdList = [
+//      "ca-app-pub-3940256099942544/5224354917"
+//    ];
+//    this.iosRewardBasedVideoIdList = ["ca-app-pub-3940256099942544/1712485313"];
+
 class _MyHomePageState extends State<MyHomePage> with AdmobUtils {
   @override
   void initState() {
     super.initState();
-    initTestData(
-        (AdmobAdEvent event, Map<String, dynamic> args, AdTypeEnum adType) {
+    initAdmobIds(
+      appIdList: [
+        "ca-app-pub-3940256099942544~3347511713",
+        "ca-app-pub-3940256099942544~1458002511"
+      ],
+      androidBannerIdList:["ca-app-pub-3940256099942544/1033173712"],
+      iosBannerIdList:["ca-app-pub-3940256099942544/2934735716"],
+      androidInterstitialIdList:["ca-app-pub-3940256099942544/1033173712"],
+      iosInterstitialIdList:["ca-app-pub-3940256099942544/4411468910"],
+      androidRewardBasedVideoIdList:["ca-app-pub-3940256099942544/5224354917"],
+      iosRewardBasedVideoIdList:["ca-app-pub-3940256099942544/1712485313"]
+    );
+    initData((AdmobAdEvent event, Map<String, dynamic> args, AdTypeEnum adType) {
       print("${adType.index}");
     });
     GenerateAdmobId factory = getAdmobIdFactory();

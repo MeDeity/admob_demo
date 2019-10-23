@@ -1,8 +1,10 @@
+import 'package:admob_demo/second_page.dart';
 import 'package:admob_flutter/admob_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_lib_admob/admob/ad_type_enum.dart';
 import 'package:flutter_lib_admob/admob/admob_utils.dart';
 import 'package:flutter_lib_admob/admob/generate_admob_id.dart';
+import 'package:lib_mvp/router/app_navigator.dart';
 
 void main() {
   runApp(MyApp());
@@ -95,6 +97,12 @@ class _MyHomePageState extends State<MyHomePage> with AdmobUtils {
               child: Text("奖励式", style: TextStyle(fontSize: 18)),
               onPressed: () {
                 showRewardAd();
+              },
+            ),
+            FlatButton(
+              child: Text("第二个页面测试", style: TextStyle(fontSize: 18)),
+              onPressed: () {
+                AppNavigator.push(context, SecondPage());
               },
             ),
           ],

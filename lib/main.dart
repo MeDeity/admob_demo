@@ -49,10 +49,14 @@ class _MyHomePageState extends State<MyHomePage> with AdmobUtils {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
+      body: Container(
+        alignment: Alignment.topCenter,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            showBannerAd(
+            callback: (AdmobAdEvent event, Map<String, dynamic> args,
+                AdTypeEnum adType) {}),
             FlatButton(
               child: Text("插页式", style: TextStyle(fontSize: 18)),
               onPressed: () {
@@ -62,15 +66,7 @@ class _MyHomePageState extends State<MyHomePage> with AdmobUtils {
             FlatButton(
               child: Text("奖励式", style: TextStyle(fontSize: 18)),
               onPressed: () {
-                showInterstitialAd();
-              },
-            ),
-            FlatButton(
-              child: Text("Banner", style: TextStyle(fontSize: 18)),
-              onPressed: () {
-                showBannerAd(
-                    callback: (AdmobAdEvent event, Map<String, dynamic> args,
-                        AdTypeEnum adType) {});
+                showRewardAd();
               },
             ),
           ],
